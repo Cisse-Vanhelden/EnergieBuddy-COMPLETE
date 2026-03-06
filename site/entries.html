@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verbruik - EnergieBuddy</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body data-page="entries">
+
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="/dashboard.html" class="brand">EnergieBuddy</a>
+    <nav class="nav">
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/devices.html">Apparaten</a>
+      <a href="/entries.html">Verbruik</a>
+      <a href="/leaderboard.html">Leaderboard</a>
+      <a href="/profile.html">Profiel</a>
+      <button id="logout-button" class="linklike">Uitloggen</button>
+    </nav>
+  </div>
+</header>
+
+    <main class="container" style="padding:24px 0 48px">
+      <div class="kicker">Verbruik</div>
+      <h1>Energie ingeven</h1>
+      <div class="grid cols-2">
+        <section class="card pad">
+          <form id="entry-form" class="form">
+            <label>Apparaat
+              <select id="device-id" name="deviceId"></select>
+            </label>
+            <label>Datum<input type="date" name="entryDate" required /></label>
+            <label>kWh gebruikt<input type="number" step="0.01" name="kwhUsed" min="0" required /></label>
+            <label>Kost in euro<input type="number" step="0.01" name="costEur" min="0" /></label>
+            <label>Notities<textarea name="notes" rows="3" placeholder="Optioneel"></textarea></label>
+            <button class="btn success" type="submit">Opslaan</button>
+          </form>
+        </section>
+        <section id="entry-list"></section>
+      </div>
+    </main>
+
+<div id="chat-toggle" class="chat-toggle">🤖</div>
+<div id="chat-box" class="chat-box">
+  <div class="chat-head">EnergieBuddy AI</div>
+  <div id="chat-messages" class="chat-messages"></div>
+  <div class="chat-input-wrap">
+    <input id="chat-input" placeholder="Stel een vraag..." />
+    <button id="chat-send" class="btn">Verstuur</button>
+  </div>
+</div>
+
+
+
+<script type="module" src="/js/layout.js"></script>
+<script type="module" src="/js/chatbot.js"></script>
+<script type="module" src="/js/entries.js"></script>
+</body>
+</html>

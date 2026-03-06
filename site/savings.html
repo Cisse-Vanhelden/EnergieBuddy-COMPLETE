@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Savings – EnergieBuddy</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/html2pdf.js"></script>
+</head>
+<body onload="EB.initSavings()">
+  <div class="container">
+    <div class="topbar">
+      <div class="brand"><div class="logo">⚡</div><div>EnergieBuddy</div></div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="input.html">Input</a>
+        <a href="savings.html">Savings</a>
+        <a href="tips.html">Tips</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <span id="auth-nav" class="row" style="gap:10px"></span>
+      </nav>
+    </div>
+    <hr class="sep" />
+    
+<h1>Savings Simulation</h1>
+<p class="subtitle">Zie hoe reductie je factuur en CO₂ beïnvloedt.</p>
+<div class="card"><div class="row"><div><h2>Reduction Target</h2><div class="hint">Simuleer hier je doelen (0% → 50%)</div></div><span class="badge savings-badge" id="savingsBadge">↘ 20%</span></div><div style="height:14px"></div><input type="range" id="savingsSlider" min="0" max="50" step="5" value="20" style="width: 100%; margin: 10px 0" /><div class="small" style="margin-top:10px; display:flex; justify-content:space-between"><span>0%</span><span>50%</span></div></div>
+<div style="height:14px"></div>
+<div class="grid cols-3"><div class="card"><div class="kpi-label">Energy Savings</div><div class="kpi-value" id="save-kwh">—</div><div class="kpi-sub">kWh/maand</div></div><div class="card"><div class="kpi-label">Cost Savings</div><div class="kpi-value" id="save-cost">—</div><div class="kpi-sub">€/maand</div></div><div class="card"><div class="kpi-label">CO₂ Reduction</div><div class="kpi-value" id="save-co2">—</div><div class="kpi-sub">kg/maand</div></div></div>
+<div style="height:14px"></div>
+<div class="grid cols-2"><div class="card"><h2>Before vs After (Monthly)</h2><div class="hint">Verwachte impact in cijfers.</div><div style="margin-top:10px; width:100%;"><canvas id="savingsChart"></canvas></div></div><div class="card soft"><h2>Annual impact</h2><div class="hint">Met de gespecificeerde reductie</div><div style="margin-top:14px; line-height:2.0; font-size:16px;"><div><b>Yearly savings:</b> <span id="ann-eur">...</span></div><div><b>CO₂ prevented:</b> <span id="ann-co2">...</span> kg</div><div><b>Trees equivalent:</b> <span id="ann-trees">...</span> trees</div><p class="small" style="margin-top:8px">1 boom compenseert ~21 kg CO₂/jaar.</p></div></div></div>
+
+    <div class="footer-note">Database-backed demo • Login + leaderboard + AI chat • SDG 7: Affordable and Clean Energy</div>
+  </div>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/app.js"></script>
+  
+</body>
+</html>

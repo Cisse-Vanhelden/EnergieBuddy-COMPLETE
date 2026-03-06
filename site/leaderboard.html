@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Leaderboard – EnergieBuddy</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/html2pdf.js"></script>
+</head>
+<body onload="EB.initLeaderboard()">
+  <div class="container">
+    <div class="topbar">
+      <div class="brand"><div class="logo">⚡</div><div>EnergieBuddy</div></div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="input.html">Input</a>
+        <a href="savings.html">Savings</a>
+        <a href="tips.html">Tips</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <span id="auth-nav" class="row" style="gap:10px"></span>
+      </nav>
+    </div>
+    <hr class="sep" />
+    
+<h1>Leaderboard</h1>
+<p class="subtitle">Vergelijk scores van alle gebruikers, inclusief de standaard demo user.</p>
+<div class="card"><table class="table"><thead><tr><th>#</th><th>Naam</th><th>Weekscore</th><th>Maandscore</th><th>Total points</th></tr></thead><tbody id="leaderboard-body"></tbody></table></div>
+
+    <div class="footer-note">Database-backed demo • Login + leaderboard + AI chat • SDG 7: Affordable and Clean Energy</div>
+  </div>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/app.js"></script>
+  
+</body>
+</html>
