@@ -1,17 +1,38 @@
 <!doctype html>
-<html lang="nl"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Registreren – EnergieBuddy</title><link rel="stylesheet" href="css/styles.css" /></head>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registreren – EnergieBuddy</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
 <body>
-<div class="auth-shell"><div class="card auth-card"><div class="brand" style="margin-bottom:14px"><div class="logo">⚡</div><div>EnergieBuddy</div></div>
-<h1 style="font-size:34px">Maak je account</h1><p class="subtitle">Je account wordt meteen opgeslagen in MySQL en je wordt daarna ingelogd.</p>
-<div id="register-error" class="error"></div>
-<form id="register-form" class="form">
-<label>Naam<input id="displayName" class="input" type="text" required /></label>
-<label>Email<input id="email" class="input" type="email" required /></label>
-<label>Wachtwoord<input id="password" class="input" type="password" minlength="8" required /></label>
-<button class="btn" type="submit">Registreren</button>
-</form>
-<div class="hero-cta"><a class="btn secondary" href="login.html" style="width:auto">Ik heb al een account</a><a class="btn secondary" href="index.html" style="width:auto">Terug naar home</a></div>
-</div></div>
-<script src="js/api.js"></script>
-<script type="module" src="/js/register.js"></script>
-</body></html>
+  <div class="auth-shell">
+    <div class="card auth-card">
+      <div class="brand" style="margin-bottom:14px">
+        <div class="logo">⚡</div>
+        <div>EnergieBuddy</div>
+      </div>
+
+      <h1 style="font-size:34px">Maak je account</h1>
+      <p class="subtitle">Je account wordt meteen opgeslagen in MySQL en je wordt daarna ingelogd.</p>
+
+      <div id="register-error" class="error"></div>
+
+      <form id="register-form" class="form">
+        <label>Naam<input id="displayName" class="input" type="text" required /></label>
+        <label>Email<input id="email" class="input" type="email" required /></label>
+        <label>Wachtwoord<input id="password" class="input" type="password" minlength="8" required /></label>
+        <button class="btn" type="submit">Registreren</button>
+      </form>
+
+      <div class="hero-cta">
+        <a class="btn secondary" href="login.html" style="width:auto">Ik heb al een account</a>
+        <a class="btn secondary" href="index.html" style="width:auto">Terug naar home</a>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/js/register.js"></script>
+</body>
+</html>
