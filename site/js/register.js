@@ -1,32 +1,34 @@
-import { api } from "./api.js";
-
 (function(){
-  const form = document.getElementById('register-form');
-  const error = document.getElementById('register-error');
+  const form = document.getElementById("login-form");
+  const error = document.getElementById("login-error");
+  const demoBtn = document.getElementById("demo-login");
 
   function showError(msg){
     error.textContent = msg;
-    error.classList.add('show');
+    error.classList.add("show");
   }
 
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    error.classList.remove('show');
+  demoBtn?.addEventListener("click", () => {
+    document.getElementById("email").value = "demo@energiebuddy.app";
+    document.getElementById("password").value = "Demo123!";
+  });
 
-    const displayName = document.getElementById('displayName').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value;
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    error.classList.remove("show");
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
 
     try {
-      await api('/register', {
-        method:'POST',
-        body: JSON.stringify({ displayName, email, password })
+      await api("/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password })
       });
 
-      window.location.href = 'index.html';
-
+      window.location.href = "dashboard.html";
     } catch (err) {
-      showError(err.message || 'Registratie mislukt.');
+      showError(err.message || "Login mislukt.");
     }
   });
 })();

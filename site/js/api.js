@@ -1,4 +1,4 @@
-export async function api(path, options = {}) {
+async function api(path, options = {}) {
   const response = await fetch(`/.netlify/functions${path}`, {
     credentials: "include",
     headers: {

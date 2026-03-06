@@ -1,13 +1,17 @@
-import { api } from "./api.js";
-
 (function(){
   const form = document.getElementById("login-form");
   const error = document.getElementById("login-error");
+  const demoBtn = document.getElementById("demo-login");
 
   function showError(msg){
     error.textContent = msg;
     error.classList.add("show");
   }
+
+  demoBtn?.addEventListener("click", () => {
+    document.getElementById("email").value = "demo@energiebuddy.app";
+    document.getElementById("password").value = "Demo123!";
+  });
 
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
